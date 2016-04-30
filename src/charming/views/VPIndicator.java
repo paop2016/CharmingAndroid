@@ -104,7 +104,6 @@ public class VPIndicator extends LinearLayout {
 			@Override
 			public void onPageSelected(int arg0) {
 				// TODO Auto-generated method stub
-				Log.v("jay", "onPageSelected");
 				setLightText(arg0);
 				if(movePattern==MOVE_QUICK){
 					LinearLayout.LayoutParams layoutParams = (LayoutParams) iv.getLayoutParams();
@@ -126,7 +125,6 @@ public class VPIndicator extends LinearLayout {
 			@Override
 			public void onPageScrolled(int arg0, float arg1, int arg2) {
 				// TODO Auto-generated method stub
-				Log.v("jay", "onPageScrolled");
 				if(movePattern==MOVE_SMOOTH){
 					LinearLayout.LayoutParams layoutParams = (LayoutParams) iv.getLayoutParams();
 					layoutParams.leftMargin = (int) (item_width * (arg0 + arg1));
