@@ -6,7 +6,6 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import wang.bestadapter.utils.MyViewHolder;
 
 public abstract class CommenAdapter<T> extends BaseAdapter{
 	
