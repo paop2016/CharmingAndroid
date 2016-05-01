@@ -2282,15 +2282,6 @@ containing a value of this type.
         public static int Animation_AppCompat_Dialog=0x7f0b004b;
         public static int Animation_AppCompat_DropDownUp=0x7f0b004c;
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
@@ -2302,11 +2293,7 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static int AppBaseTheme=0x7f0b013e;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static int AppTheme=0x7f0b013f;
+        public static int AppBaseTheme=0x7f0b0140;
         public static int Base_AlertDialog_AppCompat=0x7f0b00d0;
         public static int Base_AlertDialog_AppCompat_Light=0x7f0b00d1;
         public static int Base_Animation_AppCompat_Dialog=0x7f0b00cc;
@@ -2498,6 +2485,8 @@ containing a value of this type.
     
          */
         public static int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0b00b0;
+        public static int FullScreen=0x7f0b013e;
+        public static int MyStyle=0x7f0b013f;
         public static int Platform_AppCompat=0x7f0b010d;
         public static int Platform_AppCompat_Light=0x7f0b010e;
         /**  Overlay themes 
