@@ -1,21 +1,18 @@
 package charming.views;
 
-import java.util.Iterator;
 import java.util.List;
 
-import android.R;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
-import android.renderscript.Type;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.LinearLayout;
 
 public class HistorgramLine extends LinearLayout{
 	private List<List<Integer>> mData;
+	private List<String> mTitles;
 	private Paint mPaint;
 	private float mItemWidth;
 	private float mItemMaxHight;
@@ -56,8 +53,6 @@ public class HistorgramLine extends LinearLayout{
 			mPaint.setTextSize(lineHeight);
 			float fontSize1=mPaint.measureText(1+"");
 			float fontSize2=mPaint.measureText(10+"");
-			Log.v("jay", "fontSize1"+fontSize1+"");
-			Log.v("jay", "fontSize2"+fontSize2+"");
 			count=0;
 			for (int j = 0; j < 99; j++) {
 				if(mData.get(i).contains(j)){
@@ -81,13 +76,22 @@ public class HistorgramLine extends LinearLayout{
 //			FontMetrics fm = mPaint.getFontMetrics();   
 //			fm.
 			float fontSize3=mPaint.measureText(count+"");
-			Log.v("jay", "fontSize3"+fontSize3+"");
 			canvas.drawText(count+"", (float)(mItemWidth * (i+0.5)-fontSize3/2), (float) ((1 - mRatioY) * mItemMaxHight-24), mPaint);
+			if(mTitles!=null&&mTitles.size()>i){
+				mPaint.setTextSize(64);
+				float fontSize4=mPaint.measureText(mTitles.get(i));
+				canvas.drawText(mTitles.get(i), (float)(mItemWidth * (i+0.5)-fontSize4/2), (float) ((1 - mRatioY) * mItemMaxHight-120), mPaint);
+			}
 		}
 		super.dispatchDraw(canvas);
 	}
 
-	public void setData(List<List<Integer>> datas){
+	public HistorgramLine setDatas(List<List<Integer>> datas){
 		mData=datas;
+		return this;
+	}
+	public HistorgramLine setTitles(List<String> titles){
+		mTitles=titles;
+		return this;
 	}
 }
