@@ -46,8 +46,8 @@ public class HistorgramLine extends LinearLayout{
 	protected void dispatchDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
 		Log.v("jay", "dispatchDraw");
-		float lineHeight = mItemMaxHight * mRatioY / 99;
-		mPaint.setStrokeWidth(lineHeight);
+		float lineHeight = 1.0f*mItemMaxHight * mRatioY / 99;
+		mPaint.setStrokeWidth(lineHeight-0.5f);
 		int count = 0;
 		for (int i = 0; i < mData.size(); i++) {
 			mPaint.setTextSize(lineHeight);
@@ -62,9 +62,9 @@ public class HistorgramLine extends LinearLayout{
 					mPaint.setColor(0x77f98740);
 				}
 				canvas.drawLine(mItemWidth * i + (mItemWidth - mHistogramWidth) / 2,
-						(float) ((1 - mRatioY) * mItemMaxHight + (j + 0.5) * lineHeight),
+						(float) ((1.0f - mRatioY) * mItemMaxHight + (j + 0.5f) * lineHeight),
 						mItemWidth * (i + 1) - (mItemWidth - mHistogramWidth) / 2,
-						(float) ((1 - mRatioY) * mItemMaxHight + (j + 0.5 ) * lineHeight), mPaint);
+						(float) ((1.0f - mRatioY) * mItemMaxHight + (j + 0.5f ) * lineHeight), mPaint);
 				mPaint.setColor(0xff000000);
 				if(j<9){
 					canvas.drawText(j+1+"", (float)(mItemWidth * (i+0.5)-fontSize1/2), (float) ((1 - mRatioY) * mItemMaxHight + (j + 1) * lineHeight), mPaint);

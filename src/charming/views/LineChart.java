@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetrics;
+import android.graphics.Paint.Style;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -49,6 +50,7 @@ public class LineChart extends View {
 		mLinePaint.setAntiAlias(true);
 		mLinePaint.setStrokeWidth(6);
 		mLinePaint.setColor(0xFF81CFE0);
+		mLinePaint.setStyle(Style.FILL);
 		mYwordPaint = new Paint();
 		mYwordPaint.setDither(true);
 		mYwordPaint.setAntiAlias(true);
@@ -117,6 +119,8 @@ public class LineChart extends View {
 				float mValueWordWidth = mYwordPaint.measureText(value + "");
 				canvas.drawText(value + "", mItemWidth * (i + 1) - mValueWordWidth / 2,
 						mItemHeight * 0.5f + mItemHeight * mYItemsCount * (1 - radio) - distance / 2, mXwordPaint);
+				// 圆点
+				canvas.drawCircle(mItemWidth * (i + 1), mItemHeight * 0.5f + mItemHeight * mYItemsCount * (1 - radio), 10, mLinePaint);
 			}
 		}
 	}
